@@ -1,5 +1,5 @@
  # pull official base image
-        FROM node:16.12.0-alpine
+        FROM node:19-alpine3.15
         
         # set working directory
         WORKDIR /app
@@ -8,7 +8,9 @@
         ENV PATH /app/node_modules/.bin:$PATH
         
         # install app dependencies
-        RUN npm install        
+        RUN npm install
+        
+        
         # add app
         COPY . ./
         
